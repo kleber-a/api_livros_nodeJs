@@ -7,14 +7,14 @@ const PORT = 3000
 //     console.log('servidor escutando!');
 // });
 
-if (process.env.VERCEL === undefined) {
-    // Rodando localmente
-    app.listen(PORT, () => {
-      console.log(`Servidor escutando na porta ${PORT}`);
-    });
-  }
+// if (process.env.VERCEL === undefined) {
+//     // Rodando localmente
+//     app.listen(PORT, () => {
+//       console.log(`Servidor escutando na porta ${PORT}`);
+//     });
+//   }
   
   // Exporte como função para Vercel
   export default function (req, res) {
-    app(req, res);
+    app(req, res); // Aqui, passamos as requisições para o Express lidar.
   }
