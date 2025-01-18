@@ -1,7 +1,7 @@
 import "dotenv/config"
 import app from "./src/app.js";
-
-const PORT = 3000
+const app = express();
+const PORT = 4000;
 
 app.listen(PORT, () => {
     console.log('servidor escutando!');
