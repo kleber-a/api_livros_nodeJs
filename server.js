@@ -7,3 +7,10 @@ app.listen(PORT, () => {
     console.log('servidor escutando!');
 });
 
+app.get('/', (req, res) => {
+    res.send('Nossa API está funcionando!')
+})
+
+app.get('/test', (req, res) => {
+    res.send('Você entrou no test')
+})
