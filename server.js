@@ -27,6 +27,10 @@ app.get('/', (req, res) => {
   res.send('API funcionando corretamente!');
 });
 
+app.get('/livros', (req, res) => {
+  res.status(200).send("livros")
+});
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
