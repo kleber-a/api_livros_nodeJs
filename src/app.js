@@ -1,6 +1,9 @@
 import express from "express";
 import connectDataBase from "./config/dbConnect.js";
 import routes from "./routes/index.js";
+// import mongoose from "mongoose";
+import manipuladorDeErros from "./middlewares/manipuladoDeErros.js";
+import manipulador404 from "./middlewares/manipulador404.js";
 
 const conexao = await connectDataBase();
 
@@ -15,11 +18,7 @@ conexao.once("open", () => {
 const app = express();
 routes(app);
 
-
-app.delete("/livros/:id", (req, res) => {
-    const index = buscarLivros(req.params.id);
-    livros.splice(index, 1);
-    res.status(200).send('livro removido com sucesso');
-});
+app.use(manipulador404)
+app.use(manipuladorDeErros);
 
 export default app;

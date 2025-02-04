@@ -3,6 +3,7 @@ import livros from "./livrosRoutes.js";
 import autores from "./autoresRoutes.js";
 
 const routes = (app) => {
+    console.log('routes')
     app.use(express.json());
     app.route("/").get((req,res) => res.status(200).send("Curso de Node.js"));
 
